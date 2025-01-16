@@ -5,6 +5,7 @@ export const ImageUpload = () => {
    const [preview, setPreview] = useState(null);
    const [imageFile, setImageFile] = useState(null);
    const [result, setResult] = useState(null);
+   const [description, setDescription] = useState("");
 
    const handleImageChange = (e) => {
       const file = e.target.files[0];
@@ -39,6 +40,7 @@ export const ImageUpload = () => {
          );
 
          setResult(response.data.disease);
+         setDescription(response.data.description);
       } catch (error) {
          console.error("Error:", error);
          alert("Terjadi kesalahan saat mengupload gambar.");
@@ -77,10 +79,16 @@ export const ImageUpload = () => {
             )}
 
             {result && (
-               <div className="mt-4">
-                  <h3>Hasil Prediksi:</h3>
-                  <p className="text-2xl text-red-500">{result}</p>
-               </div>
+               <>
+                  <div className="mt-4">
+                     <h3>Hasil Prediksi:</h3>
+                     <p className="text-2xl text-red-500">{result}</p>
+                  </div>
+                  <div className="mt-4">
+                     <h3>Deskripsi Penyakit:</h3>
+                     <p className="text-sm text-gray-500">{description}</p>
+                  </div>
+               </>
             )}
          </div>
       </div>
