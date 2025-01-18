@@ -54,7 +54,7 @@ export const ImageUpload = () => {
                className="block mb-2 text-sm font-medium text-gray-900"
                htmlFor="image_input"
             >
-               Upload file
+               Upload file nih
             </label>
             <input
                className="block w-full p-2 text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50"
