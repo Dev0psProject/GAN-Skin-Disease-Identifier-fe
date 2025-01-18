@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+   name: fe-gan-identifier
+   namespace: identifier-app
+spec:
+   replicas: 1
+   selector:
+      matchLabels:
+         app: fe-gan-identifier
+   template:
+      metadata:
+         labels:
+            app: fe-gan-identifier
+      spec:
+         containers:
+            - name: fe-gan-identifier
+              image: mhdusop/fe-gan-identifier:1.0.1
+              ports:
+                 - containerPort: 80
+              resources:
+                 limits:
+                    memory: 512Mi
+                    cpu: "1"
+                 requests:
+                    memory: 256Mi
+                    cpu: "0.2"
