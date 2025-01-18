@@ -8,7 +8,7 @@ RUN apk add git
 WORKDIR /frontend
 
 # Clone hanya branch frontend dari repository
-RUN git clone -b frontend https://github.com/Dev0psProject/GAN-Skin-Disease-Identifier-fe.git .
+RUN git clone https://github.com/Dev0psProject/GAN-Skin-Disease-Identifier-fe.git .
 
 # Install dependencies dan build aplikasi frontend
 RUN npm install
