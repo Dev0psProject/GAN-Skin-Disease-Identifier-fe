@@ -15,7 +15,7 @@ spec:
       spec:
          containers:
             - name: fe-gan-identifier
-              image: mhdusop/fe-gan-identifier:1.0.1
+              image: mhdusop/fe-gan-identifier:1.0.2
               ports:
                  - containerPort: 80
               resources:
